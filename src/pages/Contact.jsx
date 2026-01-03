@@ -4,16 +4,6 @@ export default function Contact() {
       <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
 
       <form className="space-y-4">
-        {/* Netlify required hidden inputs */}
-        <input type="hidden" name="form-name" value="contact" />
-
-        {/* Honeypot (spam protection) */}
-        <p className="hidden">
-          <label>
-            Don’t fill this out: <input />
-          </label>
-        </p>
-
         {/* Full Name */}
         <div>
           <label htmlFor="fullname" className="block font-medium">
