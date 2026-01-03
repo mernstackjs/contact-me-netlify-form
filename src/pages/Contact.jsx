@@ -3,21 +3,14 @@ export default function Contact() {
     <div className="max-w-xl mx-auto p-6">
       <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
 
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        action="/success"
-        className="space-y-4"
-      >
+      <form className="space-y-4">
         {/* Netlify required hidden inputs */}
         <input type="hidden" name="form-name" value="contact" />
 
         {/* Honeypot (spam protection) */}
         <p className="hidden">
           <label>
-            Don’t fill this out: <input name="bot-field" />
+            Don’t fill this out: <input />
           </label>
         </p>
 
