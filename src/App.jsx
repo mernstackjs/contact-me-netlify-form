@@ -1,33 +1,29 @@
+import { Link, Route, Routes } from "react-router";
+import { BrowserRouter } from "react-router";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+
 export default function App() {
   return (
-    <div className="">
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
+    <BrowserRouter>
+      <div className="md:p-12 p-4">
+        <header className="flex justify-between items-center p-4">
+          <h1 className="text-3xl font-bold underline">My App</h1>
+          <nav className="flex gap-2">
+            <Link className="text-blue-500 hover:underline" to="/">
+              Home
+            </Link>
+            <Link className="text-blue-500 hover:underline" to="/contact">
+              Contact
+            </Link>
+          </nav>
+        </header>
 
-        <p>
-          <label>
-            Full Name: <input type="text" name="fullname" required />
-          </label>
-        </p>
-        <p>
-          <label>
-            Email: <input type="email" name="email" required />
-          </label>
-        </p>
-        <p>
-          <label>
-            Phone Number: <input type="tel" name="phone" required />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message" required></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send Message</button>
-        </p>
-      </form>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
